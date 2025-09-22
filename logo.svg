@@ -1,0 +1,76 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer border with Mexican flag colors -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#1f4e3d" stroke-width="8"/>
+  <circle cx="100" cy="100" r="87" fill="none" stroke="#ffffff" stroke-width="8"/>
+  <circle cx="100" cy="100" r="79" fill="none" stroke="#c8102e" stroke-width="8"/>
+  
+  <!-- Golden frame -->
+  <circle cx="100" cy="100" r="71" fill="none" stroke="#d4af37" stroke-width="3"/>
+  <circle cx="100" cy="100" r="68" fill="none" stroke="#d4af37" stroke-width="2"/>
+  <circle cx="100" cy="100" r="65" fill="none" stroke="#d4af37" stroke-width="1"/>
+  
+  <!-- Background divided into green and red -->
+  <defs>
+    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d5016;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a3d0a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="redGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b1538;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5c0e26;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Upper half - dark green -->
+  <path d="M 35 100 A 30 30 0 0 1 165 100 L 165 35 A 30 30 0 0 0 35 35 Z" fill="url(#greenGradient)"/>
+  
+  <!-- Lower half - dark red -->
+  <path d="M 35 100 A 30 30 0 0 0 165 100 L 165 165 A 30 30 0 0 1 35 165 Z" fill="url(#redGradient)"/>
+  
+  <!-- Sunburst rays behind hat -->
+  <g fill="#d4af37" opacity="0.8">
+    <path d="M 100 40 L 105 50 L 100 45 L 95 50 Z"/>
+    <path d="M 120 50 L 125 60 L 120 55 L 115 60 Z"/>
+    <path d="M 135 70 L 140 80 L 135 75 L 130 80 Z"/>
+    <path d="M 140 90 L 145 100 L 140 95 L 135 100 Z"/>
+    <path d="M 135 110 L 140 120 L 135 115 L 130 120 Z"/>
+    <path d="M 120 130 L 125 140 L 120 135 L 115 140 Z"/>
+    <path d="M 100 150 L 105 160 L 100 155 L 95 160 Z"/>
+    <path d="M 80 130 L 85 140 L 80 135 L 75 140 Z"/>
+    <path d="M 65 110 L 70 120 L 65 115 L 60 120 Z"/>
+    <path d="M 60 90 L 65 100 L 60 95 L 55 100 Z"/>
+    <path d="M 65 70 L 70 80 L 65 75 L 60 80 Z"/>
+    <path d="M 80 50 L 85 60 L 80 55 L 75 60 Z"/>
+  </g>
+  
+  <!-- Golden cowboy hat -->
+  <g transform="translate(100, 100)">
+    <!-- Hat crown -->
+    <ellipse cx="0" cy="-15" rx="25" ry="20" fill="#d4af37" stroke="#000" stroke-width="2"/>
+    <!-- Hat brim -->
+    <ellipse cx="0" cy="5" rx="35" ry="8" fill="#d4af37" stroke="#000" stroke-width="2"/>
+    <!-- Hat band -->
+    <ellipse cx="0" cy="-5" rx="25" ry="3" fill="#000"/>
+    <!-- Hat crease -->
+    <path d="M -20 -20 Q 0 -25 20 -20" stroke="#000" stroke-width="1" fill="none"/>
+  </g>
+  
+  <!-- Text: LA PALMA DE ORO -->
+  <text x="100" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#d4af37">LA PALMA DE ORO</text>
+  
+  <!-- Text: DE CHILAPA GUERRERO -->
+  <text x="100" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#d4af37">DE CHILAPA GUERRERO</text>
+  
+  <!-- Small icons -->
+  <!-- Bell icon (left) -->
+  <g transform="translate(75, 115)">
+    <path d="M 0 0 L 2 -3 L 4 0 L 3 2 L 1 2 Z" fill="#ffffff" stroke="#ffffff" stroke-width="0.5"/>
+    <circle cx="2" cy="-1" r="0.5" fill="#ffffff"/>
+  </g>
+  
+  <!-- Dove icon (right) -->
+  <g transform="translate(125, 115)">
+    <path d="M 0 0 Q 2 -1 4 0 Q 2 1 0 0" fill="#ffffff" stroke="#ffffff" stroke-width="0.5"/>
+    <path d="M 2 0 L 3 -0.5" stroke="#ffffff" stroke-width="0.3"/>
+  </g>
+</svg>
