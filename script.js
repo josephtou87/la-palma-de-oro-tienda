@@ -207,6 +207,9 @@ function initializeApp() {
     // Load saved preferences
     loadPreferences();
     
+    // Show welcome message
+    showWelcomeMessage();
+    
     // Initialize components
     initializeCoverflow();
     initializeTheme();
@@ -681,6 +684,83 @@ async function updateExchangeRates() {
         document.getElementById('usdRate').textContent = 'USD/MXN: $17.20';
         document.getElementById('cnyRate').textContent = 'CNY/MXN: $2.40';
     }
+}
+
+// Welcome message with typewriter effect
+function showWelcomeMessage() {
+    const welcomeModal = document.getElementById('welcomeModal');
+    const typewriterText = document.getElementById('typewriterText');
+    const typewriterCursor = document.querySelector('.typewriter-cursor');
+    
+    // Welcome messages in different languages
+    const welcomeMessages = {
+        es: "Bienvenidos a La Palma de Oro, donde la artesanía y la tradición de cada sombrero cobra vida",
+        en: "Welcome to La Palma de Oro, where the craftsmanship and tradition of every hat comes to life",
+        zh: "欢迎来到La Palma de Oro，每顶帽子的工艺和传统都在这里焕发生机"
+    };
+    
+    const message = welcomeMessages[currentLanguage] || welcomeMessages.es;
+    
+    // Show modal
+    welcomeModal.style.display = 'block';
+    
+    // Typewriter effect
+    let i = 0;
+    const typeSpeed = 80; // milliseconds per character
+    
+    function typeWriter() {
+        if (i < message.length) {
+            typewriterText.textContent += message.charAt(i);
+            i++;
+            
+            // Play typewriter sound
+            playTypewriterSound();
+            
+            setTimeout(typeWriter, typeSpeed);
+        } else {
+            // Hide cursor after typing is complete
+            setTimeout(() => {
+                typewriterCursor.style.display = 'none';
+            }, 1000);
+            
+            // Hide modal after 3 seconds
+            setTimeout(() => {
+                welcomeModal.style.opacity = '0';
+                setTimeout(() => {
+                    welcomeModal.style.display = 'none';
+                }, 500);
+            }, 3000);
+        }
+    }
+    
+    // Start typing after a short delay
+    setTimeout(typeWriter, 500);
+}
+
+// Typewriter sound effect
+function playTypewriterSound() {
+    // Create audio context for typewriter sound
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    
+    // Generate typewriter-like sound
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+    
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+    
+    // Configure sound
+    oscillator.frequency.setValueAtTime(800 + Math.random() * 400, audioContext.currentTime);
+    oscillator.type = 'square';
+    
+    // Volume envelope
+    gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+    gainNode.gain.linearRampToValueAtTime(0.1, audioContext.currentTime + 0.01);
+    gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.1);
+    
+    // Play sound
+    oscillator.start(audioContext.currentTime);
+    oscillator.stop(audioContext.currentTime + 0.1);
 }
 
 // Utility functions
