@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Palma de Oro - Sombreros Artesanales</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>La Palma de Oro</h1>
+                <p class="tagline" data-translate="tagline">Elegancia y tradición en cada sombrero. Descubre nuestra colección artesanal.</p>
+            </div>
+            <div class="header-controls">
+                <div class="language-selector">
+                    <select id="languageSelect">
+                        <option value="es">🇪🇸 Español</option>
+                        <option value="en">🇺🇸 English</option>
+                        <option value="zh">🇨🇳 中文</option>
+                    </select>
+                </div>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="#home" data-translate="nav-home">Inicio</a></li>
+                <li><a href="#products" data-translate="nav-products">Productos</a></li>
+                <li><a href="#about" data-translate="nav-about">Sobre Nosotros</a></li>
+                <li><a href="#contact" data-translate="nav-contact">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="auth-btn" id="authBtn" data-translate="login">Iniciar Sesión</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 data-translate="hero-title">¡Venta de sombreros a todo México y extranjero!</h2>
+                    <p class="subtitle" data-translate="hero-subtitle">FÁBRICA MAYOREO Y MENUDEO</p>
+                    <p class="company-info" data-translate="company-info">La Palma de Oro<br>Artesanía y tradición en cada sombrero desde 1985</p>
+                </div>
+                
+                <!-- Coverflow Carousel -->
+                <div class="coverflow-container">
+                    <div class="coverflow" id="coverflow">
+                        <div class="coverflow-item active" data-index="0">
+                            <img src="https://images.unsplash.com/photo-1521369909029-2afed882baee?w=400&h=400&fit=crop" alt="Sombrero 1">
+                        </div>
+                        <div class="coverflow-item" data-index="1">
+                            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop" alt="Sombrero 2">
+                        </div>
+                        <div class="coverflow-item" data-index="2">
+                            <img src="https://images.unsplash.com/photo-1556306535-38febf6782e7?w=400&h=400&fit=crop" alt="Sombrero 3">
+                        </div>
+                        <div class="coverflow-item" data-index="3">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop" alt="Sombrero 4">
+                        </div>
+                        <div class="coverflow-item" data-index="4">
+                            <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=400&fit=crop" alt="Sombrero 5">
+                        </div>
+                    </div>
+                    <div class="coverflow-nav">
+                        <button class="coverflow-prev" id="coverflowPrev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="coverflow-next" id="coverflowNext">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Links -->
+        <section class="quick-links">
+            <div class="container">
+                <div class="quick-links-grid">
+                    <div class="quick-link">
+                        <i class="fas fa-shopping-bag"></i>
+                        <h3 data-translate="quick-products">Productos</h3>
+                        <p data-translate="quick-products-desc">Explora nuestra colección</p>
+                    </div>
+                    <div class="quick-link">
+                        <i class="fas fa-info-circle"></i>
+                        <h3 data-translate="quick-about">Sobre Nosotros</h3>
+                        <p data-translate="quick-about-desc">Nuestra historia</p>
+                    </div>
+                    <div class="quick-link">
+                        <i class="fas fa-envelope"></i>
+                        <h3 data-translate="quick-contact">Contacto</h3>
+                        <p data-translate="quick-contact-desc">Contáctanos</p>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link tiktok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="#" class="social-link instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="products">
+            <div class="container">
+                <h2 data-translate="products-title">Nuestros Sombreros</h2>
+                <div class="search-bar">
+                    <input type="text" id="productSearch" placeholder="Buscar sombreros..." data-translate-placeholder="search-placeholder">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 data-translate="about-title">Sobre Nosotros</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p data-translate="about-text">Desde 1985, La Palma de Oro ha sido sinónimo de calidad y tradición en la fabricación de sombreros artesanales. Cada pieza es cuidadosamente elaborada por maestros artesanos con décadas de experiencia.</p>
+                        <p data-translate="about-text2">Nuestro compromiso es ofrecer sombreros únicos que combinen la elegancia tradicional con el estilo contemporáneo, manteniendo la autenticidad de nuestras técnicas ancestrales.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?w=500&h=400&fit=crop" alt="Taller artesanal">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 data-translate="contact-title">Contacto</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+52 756 122 3464</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>contacto@lapalmadeoro.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span data-translate="contact-address">México</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="exchange-rates" id="exchangeRates">
+                    <h3 data-translate="exchange-title">Tipos de Cambio</h3>
+                    <div class="rates">
+                        <span id="usdRate">USD/MXN: $17.20</span>
+                        <span id="cnyRate">CNY/MXN: $2.40</span>
+                    </div>
+                </div>
+                <div class="footer-info">
+                    <p data-translate="footer-rights">© 2025 La Palma de Oro. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/527561223464?text=Hola%20👋,%20¿en%20qué%20le%20podemos%20servir?%20–%20La%20Palma%20de%20Oro" class="whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+527561223464" class="phone-btn">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- Modals -->
+    <!-- Auth Modal -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <span class="close" id="closeAuth">&times;</span>
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-tab="login" data-translate="login">Iniciar Sesión</button>
+                <button class="tab-btn" data-tab="register" data-translate="register">Registrarse</button>
+            </div>
+            
+            <div class="tab-content active" id="loginTab">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <input type="email" id="loginEmail" required data-translate-placeholder="email-placeholder">
+                        <label data-translate="email">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="loginPassword" required data-translate-placeholder="password-placeholder">
+                        <label data-translate="password">Contraseña</label>
+                    </div>
+                    <button type="submit" data-translate="login">Iniciar Sesión</button>
+                </form>
+            </div>
+            
+            <div class="tab-content" id="registerTab">
+                <form id="registerForm">
+                    <div class="form-group">
+                        <input type="text" id="registerName" required data-translate-placeholder="name-placeholder">
+                        <label data-translate="name">Nombre</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="registerEmail" required data-translate-placeholder="email-placeholder">
+                        <label data-translate="email">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="registerPassword" required data-translate-placeholder="password-placeholder">
+                        <label data-translate="password">Contraseña</label>
+                    </div>
+                    <button type="submit" data-translate="register">Registrarse</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <span class="close" id="closeCart">&times;</span>
+            <h2 data-translate="cart-title">Carrito de Compras</h2>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be loaded here -->
+            </div>
+            <div class="cart-total">
+                <span data-translate="total">Total: $</span>
+                <span id="cartTotal">0</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn" data-translate="checkout">Proceder al Pago</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

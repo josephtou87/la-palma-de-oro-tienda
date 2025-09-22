@@ -1,0 +1,18 @@
+{
+  "name": "la-palma-de-oro",
+  "version": "1.0.0",
+  "description": "Tienda de sombreros artesanales La Palma de Oro",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "start": "python -m http.server 8000"
+  },
+  "keywords": [
+    "sombreros",
+    "artesanales",
+    "tienda",
+    "ecommerce"
+  ],
+  "author": "La Palma de Oro",
+  "license": "MIT"
+}
