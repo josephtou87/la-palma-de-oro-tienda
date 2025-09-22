@@ -1,0 +1,14 @@
+{
+  "name": "la-palma-de-oro-sombreros",
+  "version": 2,
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/save-users.php",
+      "dest": "/save-users.php"
+    }
+  ]
+}
