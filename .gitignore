@@ -84,3 +84,9 @@ typings/
 users.txt
 .DS_Store
 Thumbs.db
+
+# Images folder (keep the folder structure but ignore large files)
+images/*.png
+images/*.jpg
+images/*.jpeg
+!images/logo-real.svg

@@ -1,0 +1,44 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Black background -->
+  <circle cx="100" cy="100" r="95" fill="#000000"/>
+  
+  <!-- Golden border -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#d4af37" stroke-width="8"/>
+  <circle cx="100" cy="100" r="87" fill="none" stroke="#d4af37" stroke-width="2"/>
+  
+  <!-- Golden cowboy hat -->
+  <g transform="translate(100, 100)">
+    <!-- Hat crown -->
+    <ellipse cx="0" cy="-10" rx="28" ry="22" fill="#d4af37" stroke="#000" stroke-width="1"/>
+    <!-- Hat brim -->
+    <ellipse cx="0" cy="8" rx="38" ry="10" fill="#d4af37" stroke="#000" stroke-width="1"/>
+    <!-- Hat band -->
+    <ellipse cx="0" cy="-2" rx="28" ry="4" fill="#000"/>
+    <!-- Hat crease -->
+    <path d="M -25 -25 Q 0 -30 25 -25" stroke="#000" stroke-width="1" fill="none"/>
+    <!-- Hat details -->
+    <path d="M -20 -15 Q 0 -20 20 -15" stroke="#000" stroke-width="0.5" fill="none"/>
+  </g>
+  
+  <!-- Sunburst rays behind hat -->
+  <g fill="#d4af37" opacity="0.9">
+    <path d="M 100 50 L 105 60 L 100 55 L 95 60 Z"/>
+    <path d="M 120 60 L 125 70 L 120 65 L 115 70 Z"/>
+    <path d="M 135 80 L 140 90 L 135 85 L 130 90 Z"/>
+    <path d="M 140 100 L 145 110 L 140 105 L 135 110 Z"/>
+    <path d="M 135 120 L 140 130 L 135 125 L 130 130 Z"/>
+    <path d="M 120 140 L 125 150 L 120 145 L 115 150 Z"/>
+    <path d="M 100 150 L 105 160 L 100 155 L 95 160 Z"/>
+    <path d="M 80 140 L 85 150 L 80 145 L 75 150 Z"/>
+    <path d="M 65 120 L 70 130 L 65 125 L 60 130 Z"/>
+    <path d="M 60 100 L 65 110 L 60 105 L 55 110 Z"/>
+    <path d="M 65 80 L 70 90 L 65 85 L 60 90 Z"/>
+    <path d="M 80 60 L 85 70 L 80 65 L 75 70 Z"/>
+  </g>
+  
+  <!-- Text: LA PALMA DE ORO -->
+  <text x="100" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#d4af37">LA PALMA DE ORO</text>
+  
+  <!-- Text: DE CHILAPA GUERRERO -->
+  <text x="100" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#90EE90">DE CHILAPA GUERRERO</text>
+</svg>

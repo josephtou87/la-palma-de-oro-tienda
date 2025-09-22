@@ -723,13 +723,13 @@ function showWelcomeMessage() {
                 typewriterCursor.style.display = 'none';
             }, 1000);
             
-            // Hide modal after 3 seconds
+            // Hide modal after 2 seconds
             setTimeout(() => {
                 welcomeModal.style.opacity = '0';
                 setTimeout(() => {
                     welcomeModal.style.display = 'none';
                 }, 500);
-            }, 3000);
+            }, 2000);
         }
     }
     
