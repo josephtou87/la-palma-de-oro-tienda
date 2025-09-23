@@ -138,7 +138,7 @@ const translations = {
 const products = [
     {
         id: 1,
-        name: 'Sombrero Charro Clásico',
+        name: 'Sombrero Catrin de dama',
         nameEn: 'Classic Charro Hat',
         nameZh: '经典牛仔帽',
         description: 'Sombrero tradicional mexicano con detalles dorados y acabado artesanal.',
@@ -150,15 +150,15 @@ const products = [
     },
     {
         id: 2,
-        name: 'Sombrero Vaquero Premium',
-        nameEn: 'Premium Cowboy Hat',
+        name: 'Sombrero Rodeo',
+        nameEn: 'Rodeo Hat',
         nameZh: '高级牛仔帽',
-        description: 'Sombrero vaquero de alta calidad con materiales premium.',
+        description: 'Sombrero Rodeo de alta calidad con materiales premium.',
         descriptionEn: 'High-quality cowboy hat with premium materials.',
         descriptionZh: '高品质牛仔帽，采用优质材料。',
         price: 3200,
         image: 'images/rodeo.jpg',
-        category: 'vaquero'
+        category: 'rodeo'
     },
     {
         id: 3,
@@ -173,28 +173,19 @@ const products = [
         category: 'marinero'
     },
     {
-        id: 4,
-        name: 'Sombrero de Playa',
-        nameEn: 'Beach Hat',
-        nameZh: '海滩帽',
-        description: 'Sombrero de ala ancha perfecto para la playa con cinta rosa.',
-        descriptionEn: 'Wide-brimmed hat perfect for the beach with pink ribbon.',
-        descriptionZh: '宽边帽子，适合海滩，带有粉色丝带。',
-        price: 1200,
-        image: 'images/sombrero3.jpg',
-        category: 'playa'
+
     },
     {
         id: 5,
-        name: 'Sombrero Cowboy Tradicional',
-        nameEn: 'Traditional Cowboy Hat',
+        name: 'Sombrero Dama Tradicional',
+        nameEn: 'Traditional Lady Hat',
         nameZh: '传统牛仔帽',
-        description: 'Sombrero cowboy tradicional con banda blanca y negra.',
-        descriptionEn: 'Traditional cowboy hat with white and black band.',
+        description: 'Sombrero dama tradicional con banda blanca y negra.',
+        descriptionEn: 'Traditional lady hat with white and black band.',
         descriptionZh: '传统牛仔帽，带有白色和黑色带子。',
         price: 4500,
         image: 'images/sombrero4.jpg',
-        category: 'cowboy'
+        category: 'dama'
     },
     {
         id: 6,
@@ -222,15 +213,15 @@ const products = [
     },
     {
         id: 8,
-        name: 'Sombrero Espíritu',
-        nameEn: 'Spirit Hat',
+        name: 'Sombrero Espíri',
+        nameEn: 'espiri Hat',
         nameZh: '精神帽',
-        description: 'Sombrero con diseño espiritual y significado cultural.',
-        descriptionEn: 'Hat with spiritual design and cultural meaning.',
+        description: 'Sombrero con diseño espiri y significado cultural.',
+        descriptionEn: 'Hat with espiri design and cultural meaning.',
         descriptionZh: '具有精神设计和文化意义的帽子。',
         price: 1900,
         image: 'images/espiri.jpg',
-        category: 'espiritu'
+        category: 'espiri'
     },
     {
         id: 9,
