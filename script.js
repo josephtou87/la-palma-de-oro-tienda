@@ -261,6 +261,7 @@ function initializeApp() {
     // Initialize components
     initializeMobileMenu();
     initializeCoverflow();
+    initializeImageZoom();
     initializeTheme();
     initializeLanguage();
     initializeAuth();
@@ -315,6 +316,46 @@ function initializeMobileMenu() {
         if (window.innerWidth > 768) {
             mobileMenuToggle.classList.remove('active');
             navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+}
+
+// Image zoom functionality
+function initializeImageZoom() {
+    const imageZoomModal = document.getElementById('imageZoomModal');
+    const imageZoomClose = document.getElementById('imageZoomClose');
+    const zoomedImage = document.getElementById('zoomedImage');
+    const coverflowImages = document.querySelectorAll('.coverflow-item img');
+    
+    // Add click event to all coverflow images
+    coverflowImages.forEach(img => {
+        img.addEventListener('click', () => {
+            zoomedImage.src = img.src;
+            zoomedImage.alt = img.alt;
+            imageZoomModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    
+    // Close modal when clicking close button
+    imageZoomClose.addEventListener('click', () => {
+        imageZoomModal.style.display = 'none';
+        document.body.style.overflow = '';
+    });
+    
+    // Close modal when clicking outside the image
+    imageZoomModal.addEventListener('click', (e) => {
+        if (e.target === imageZoomModal) {
+            imageZoomModal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && imageZoomModal.style.display === 'block') {
+            imageZoomModal.style.display = 'none';
             document.body.style.overflow = '';
         }
     });
