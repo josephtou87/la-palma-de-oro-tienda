@@ -145,7 +145,7 @@ const products = [
         descriptionEn: 'Traditional Mexican hat with golden details and artisanal finish.',
         descriptionZh: '传统墨西哥帽子，带有金色细节和手工完成。',
         price: 2500,
-        image: 'https://images.unsplash.com/photo-1521369909029-2afed882baee?w=400&h=400&fit=crop',
+        image: 'images/sombrero2.jpg',
         category: 'charro'
     },
     {
@@ -157,44 +157,92 @@ const products = [
         descriptionEn: 'High-quality cowboy hat with premium materials.',
         descriptionZh: '高品质牛仔帽，采用优质材料。',
         price: 3200,
-        image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop',
+        image: 'images/rodeo.jpg',
         category: 'vaquero'
     },
     {
         id: 3,
-        name: 'Sombrero de Fiesta',
-        nameEn: 'Party Hat',
-        nameZh: '派对帽',
-        description: 'Sombrero elegante para ocasiones especiales con decoraciones coloridas.',
-        descriptionEn: 'Elegant hat for special occasions with colorful decorations.',
-        descriptionZh: '特殊场合的优雅帽子，带有彩色装饰。',
+        name: 'Sombrero Marinero',
+        nameEn: 'Sailor Hat',
+        nameZh: '水手帽',
+        description: 'Sombrero elegante estilo marinero con cinta rosa y acabado artesanal.',
+        descriptionEn: 'Elegant sailor-style hat with pink ribbon and artisanal finish.',
+        descriptionZh: '优雅的水手风格帽子，带有粉色丝带和手工完成。',
         price: 1800,
-        image: 'https://images.unsplash.com/photo-1556306535-38febf6782e7?w=400&h=400&fit=crop',
-        category: 'fiesta'
+        image: 'images/marinero.jpg',
+        category: 'marinero'
     },
     {
         id: 4,
-        name: 'Sombrero de Trabajo',
-        nameEn: 'Work Hat',
-        nameZh: '工作帽',
-        description: 'Sombrero resistente y cómodo para uso diario.',
-        descriptionEn: 'Durable and comfortable hat for daily use.',
-        descriptionZh: '耐用舒适的工作帽，适合日常使用。',
+        name: 'Sombrero de Playa',
+        nameEn: 'Beach Hat',
+        nameZh: '海滩帽',
+        description: 'Sombrero de ala ancha perfecto para la playa con cinta rosa.',
+        descriptionEn: 'Wide-brimmed hat perfect for the beach with pink ribbon.',
+        descriptionZh: '宽边帽子，适合海滩，带有粉色丝带。',
         price: 1200,
-        image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=400&fit=crop',
-        category: 'trabajo'
+        image: 'images/sombrero3.jpg',
+        category: 'playa'
     },
     {
         id: 5,
-        name: 'Sombrero de Lujo',
-        nameEn: 'Luxury Hat',
-        nameZh: '豪华帽',
-        description: 'Sombrero de lujo con materiales exóticos y acabado impecable.',
-        descriptionEn: 'Luxury hat with exotic materials and impeccable finish.',
-        descriptionZh: '豪华帽子，采用异国材料和完美工艺。',
+        name: 'Sombrero Cowboy Tradicional',
+        nameEn: 'Traditional Cowboy Hat',
+        nameZh: '传统牛仔帽',
+        description: 'Sombrero cowboy tradicional con banda blanca y negra.',
+        descriptionEn: 'Traditional cowboy hat with white and black band.',
+        descriptionZh: '传统牛仔帽，带有白色和黑色带子。',
         price: 4500,
-        image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=400&fit=crop',
-        category: 'lujo'
+        image: 'images/sombrero4.jpg',
+        category: 'cowboy'
+    },
+    {
+        id: 6,
+        name: 'Sombrero Catrina Dama',
+        nameEn: 'Catrina Lady Hat',
+        nameZh: '卡特里娜女士帽',
+        description: 'Sombrero elegante estilo catrina para damas con detalles artesanales.',
+        descriptionEn: 'Elegant catrina-style hat for ladies with artisanal details.',
+        descriptionZh: '优雅的卡特里娜风格女士帽子，带有手工细节。',
+        price: 2800,
+        image: 'images/catrin.dama.jpg',
+        category: 'catrina'
+    },
+    {
+        id: 7,
+        name: 'Sombrero Dama Elegante',
+        nameEn: 'Elegant Lady Hat',
+        nameZh: '优雅女士帽',
+        description: 'Sombrero elegante para damas con acabado refinado.',
+        descriptionEn: 'Elegant hat for ladies with refined finish.',
+        descriptionZh: '优雅的女士帽子，带有精致的完成。',
+        price: 2200,
+        image: 'images/dama.jpg',
+        category: 'dama'
+    },
+    {
+        id: 8,
+        name: 'Sombrero Espíritu',
+        nameEn: 'Spirit Hat',
+        nameZh: '精神帽',
+        description: 'Sombrero con diseño espiritual y significado cultural.',
+        descriptionEn: 'Hat with spiritual design and cultural meaning.',
+        descriptionZh: '具有精神设计和文化意义的帽子。',
+        price: 1900,
+        image: 'images/espiri.jpg',
+        category: 'espiritu'
+    },
+    {
+        id: 9,
+        name: 'Sombrero Indiana',
+        nameEn: 'Indiana Hat',
+        nameZh: '印第安纳帽',
+        description: 'Sombrero estilo aventurero con diseño clásico.',
+        descriptionEn: 'Adventure-style hat with classic design.',
+        descriptionZh: '冒险风格的帽子，带有经典设计。',
+        price: 2100,
+        image: 'images/indiana.jpg',
+        category: 'indiana'
     }
 ];
 

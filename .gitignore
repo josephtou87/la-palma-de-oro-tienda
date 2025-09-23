@@ -90,3 +90,5 @@ images/*.png
 images/*.jpg
 images/*.jpeg
 !images/logo-real.svg
+!images/logo-real.png
+!images/nosotros.png
