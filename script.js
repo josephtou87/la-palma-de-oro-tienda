@@ -173,9 +173,6 @@ const products = [
         category: 'marinero'
     },
     {
-
-    },
-    {
         id: 5,
         name: 'Sombrero Dama Tradicional',
         nameEn: 'Traditional Lady Hat',
