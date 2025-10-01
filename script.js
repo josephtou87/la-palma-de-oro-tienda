@@ -60,7 +60,13 @@ const translations = {
         'footer-description': 'Artesanía y tradición en cada sombrero desde 1985',
         'exchange-rates': 'Tipos de Cambio',
         'contact-info': 'Contacto',
-        'search-placeholder': 'Buscar sombreros...'
+        'search-placeholder': 'Buscar sombreros...',
+        'search-title': 'Encuentra tu Sombrero Perfecto',
+        'search-subtitle': 'Descubre nuestra colección artesanal con nuestro buscador inteligente',
+        'search-btn': 'Buscar',
+        'popular-searches': 'Búsquedas populares:',
+        'boys': 'Niños',
+        'boys-sizes': 'Tallas para Niños'
     },
     en: {
         'tagline': 'Elegance and tradition in every hat. Discover our artisanal collection.',
@@ -116,7 +122,13 @@ const translations = {
         'footer-description': 'Artisanry and tradition in every hat since 1985',
         'exchange-rates': 'Exchange Rates',
         'contact-info': 'Contact',
-        'search-placeholder': 'Search hats...'
+        'search-placeholder': 'Search hats...',
+        'search-title': 'Find Your Perfect Hat',
+        'search-subtitle': 'Discover our artisanal collection with our intelligent search',
+        'search-btn': 'Search',
+        'popular-searches': 'Popular searches:',
+        'boys': 'Boys',
+        'boys-sizes': 'Boys\' Sizes'
     },
     zh: {
         'tagline': '每顶帽子的优雅与传统。发现我们的手工收藏。',
@@ -172,7 +184,13 @@ const translations = {
         'footer-description': '自1985年以来每顶帽子的工艺和传统',
         'exchange-rates': '汇率',
         'contact-info': '联系我们',
-        'search-placeholder': '搜索帽子...'
+        'search-placeholder': '搜索帽子...',
+        'search-title': '找到您完美的帽子',
+        'search-subtitle': '通过我们的智能搜索发现我们的手工收藏',
+        'search-btn': '搜索',
+        'popular-searches': '热门搜索：',
+        'boys': '男孩',
+        'boys-sizes': '男孩尺码'
     }
 };
 

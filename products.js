@@ -21,6 +21,7 @@ function initializeProductsPage() {
 function initializeSearch() {
     const searchInput = document.getElementById('productSearch');
     const searchBtn = document.getElementById('searchBtn');
+    const suggestionTags = document.querySelectorAll('.suggestion-tag');
     
     // Search on input
     searchInput.addEventListener('input', (e) => {
@@ -40,6 +41,21 @@ function initializeSearch() {
             const searchTerm = e.target.value.toLowerCase();
             filterProducts(searchTerm);
         }
+    });
+    
+    // Suggestion tags functionality
+    suggestionTags.forEach(tag => {
+        tag.addEventListener('click', () => {
+            const searchTerm = tag.getAttribute('data-search');
+            searchInput.value = searchTerm;
+            filterProducts(searchTerm);
+            
+            // Add visual feedback
+            tag.style.background = 'rgba(255,255,255,0.4)';
+            setTimeout(() => {
+                tag.style.background = 'rgba(255,255,255,0.2)';
+            }, 200);
+        });
     });
 }
 
@@ -232,6 +248,50 @@ function getDetailedProducts() {
             category: 'nina',
             sizes: ['XS', 'S', 'M', 'L'],
             gender: 'Niña'
+        },
+        
+        // Niños
+        {
+            id: 11,
+            name: 'Sombrero Niño Charro',
+            nameEn: 'Boy Charro Hat',
+            nameZh: '男孩牛仔帽',
+            description: 'Sombrero charro tradicional para niños con detalles dorados.',
+            descriptionEn: 'Traditional charro hat for boys with golden details.',
+            descriptionZh: '传统男孩牛仔帽，带有金色细节。',
+            price: 1200,
+            image: 'images/sombrero2.jpg',
+            category: 'nino',
+            sizes: ['XS', 'S', 'M', 'L'],
+            gender: 'Niño'
+        },
+        {
+            id: 12,
+            name: 'Sombrero Niño Aventurero',
+            nameEn: 'Adventure Boy Hat',
+            nameZh: '冒险男孩帽',
+            description: 'Sombrero estilo aventurero para niños con diseño clásico.',
+            descriptionEn: 'Adventure-style hat for boys with classic design.',
+            descriptionZh: '冒险风格的男孩帽子，带有经典设计。',
+            price: 1000,
+            image: 'images/indiana.jpg',
+            category: 'nino',
+            sizes: ['XS', 'S', 'M', 'L'],
+            gender: 'Niño'
+        },
+        {
+            id: 13,
+            name: 'Sombrero Niño Rodeo',
+            nameEn: 'Boy Rodeo Hat',
+            nameZh: '男孩牛仔帽',
+            description: 'Sombrero rodeo para niños con materiales resistentes.',
+            descriptionEn: 'Rodeo hat for boys with durable materials.',
+            descriptionZh: '男孩牛仔帽，采用耐用材料。',
+            price: 1100,
+            image: 'images/rodeo.jpg',
+            category: 'nino',
+            sizes: ['XS', 'S', 'M', 'L'],
+            gender: 'Niño'
         }
     ];
 }
@@ -371,58 +431,143 @@ function showProductDetails(productId) {
 
 // Add CSS for products page
 const productsCSS = `
-.product-categories {
-    background: var(--bg-secondary);
-    padding: 2rem 0;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.search-section {
-    margin-bottom: 2rem;
-    display: flex;
-    justify-content: center;
-}
-
-.search-container {
+.innovative-search-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #d4af37 50%, #b8941f 100%);
+    padding: 4rem 0;
     position: relative;
-    max-width: 500px;
-    width: 100%;
+    overflow: hidden;
+}
+
+.innovative-search-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="hat-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23hat-pattern)"/></svg>');
+    opacity: 0.3;
+}
+
+.search-hero {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.search-title h2 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.search-title p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.mega-search-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.search-input-wrapper {
+    position: relative;
+    background: white;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.search-input-wrapper:focus-within {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.search-icon {
+    padding: 0 1rem;
+    color: var(--primary-color);
+    font-size: 1.2rem;
 }
 
 #productSearch {
-    width: 100%;
-    padding: 1rem 3rem 1rem 1rem;
-    border: 2px solid var(--border-color);
-    border-radius: 25px;
-    background: var(--card-bg);
-    color: var(--text-primary);
-    font-size: 1rem;
-    transition: var(--transition);
-}
-
-#productSearch:focus {
+    flex: 1;
+    border: none;
     outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+    padding: 1.5rem 1rem;
+    font-size: 1.1rem;
+    background: transparent;
+    color: var(--text-primary);
 }
 
-.search-btn {
-    position: absolute;
-    right: 0.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    background: var(--primary-color);
+#productSearch::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+.mega-search-btn {
+    background: linear-gradient(45deg, var(--primary-color), #d4af37);
     color: white;
     border: none;
-    padding: 0.75rem;
-    border-radius: 50%;
+    padding: 1rem 2rem;
+    border-radius: 40px;
     cursor: pointer;
-    transition: var(--transition);
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
-.search-btn:hover {
-    background: var(--primary-hover);
-    transform: translateY(-50%) scale(1.05);
+.mega-search-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+    background: linear-gradient(45deg, #d4af37, var(--primary-color));
+}
+
+.search-suggestions {
+    text-align: center;
+}
+
+.suggestion-label {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.suggestion-tags {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.suggestion-tag {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+}
+
+.suggestion-tag:hover {
+    background: rgba(255,255,255,0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .results-count {
@@ -430,6 +575,12 @@ const productsCSS = `
     margin-top: 1rem;
     color: var(--text-secondary);
     font-size: 0.9rem;
+}
+
+.product-categories {
+    background: var(--bg-secondary);
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .categories-nav {
@@ -716,6 +867,44 @@ const productsCSS = `
 }
 
 @media (max-width: 768px) {
+    .search-title h2 {
+        font-size: 2rem;
+    }
+    
+    .search-title p {
+        font-size: 1rem;
+    }
+    
+    .search-input-wrapper {
+        flex-direction: column;
+        padding: 1rem;
+        border-radius: 20px;
+    }
+    
+    .search-icon {
+        display: none;
+    }
+    
+    #productSearch {
+        padding: 1rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .mega-search-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .suggestion-tags {
+        gap: 0.5rem;
+    }
+    
+    .suggestion-tag {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
     .categories-nav {
         flex-direction: column;
         align-items: center;
