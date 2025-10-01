@@ -46,7 +46,20 @@ const translations = {
         'product-added': 'Producto agregado al carrito',
         'login-success': 'Sesión iniciada correctamente',
         'register-success': 'Registro exitoso',
-        'logout': 'Cerrar Sesión'
+        'logout': 'Cerrar Sesión',
+        'products-title': 'Nuestra Colección de Sombreros',
+        'products-subtitle': 'Descubre nuestra amplia gama de sombreros artesanales para toda la familia',
+        'all-products': 'Todos los Productos',
+        'men': 'Caballeros',
+        'women': 'Damas',
+        'girls': 'Niñas',
+        'size-guide': 'Guía de Tallas',
+        'men-sizes': 'Tallas para Caballeros',
+        'women-sizes': 'Tallas para Damas',
+        'girls-sizes': 'Tallas para Niñas',
+        'footer-description': 'Artesanía y tradición en cada sombrero desde 1985',
+        'exchange-rates': 'Tipos de Cambio',
+        'contact-info': 'Contacto'
     },
     en: {
         'tagline': 'Elegance and tradition in every hat. Discover our artisanal collection.',
@@ -88,7 +101,20 @@ const translations = {
         'product-added': 'Product added to cart',
         'login-success': 'Login successful',
         'register-success': 'Registration successful',
-        'logout': 'Logout'
+        'logout': 'Logout',
+        'products-title': 'Our Hat Collection',
+        'products-subtitle': 'Discover our wide range of artisanal hats for the whole family',
+        'all-products': 'All Products',
+        'men': 'Men',
+        'women': 'Women',
+        'girls': 'Girls',
+        'size-guide': 'Size Guide',
+        'men-sizes': 'Men\'s Sizes',
+        'women-sizes': 'Women\'s Sizes',
+        'girls-sizes': 'Girls\' Sizes',
+        'footer-description': 'Artisanry and tradition in every hat since 1985',
+        'exchange-rates': 'Exchange Rates',
+        'contact-info': 'Contact'
     },
     zh: {
         'tagline': '每顶帽子的优雅与传统。发现我们的手工收藏。',
@@ -130,7 +156,20 @@ const translations = {
         'product-added': '产品已加入购物车',
         'login-success': '登录成功',
         'register-success': '注册成功',
-        'logout': '退出登录'
+        'logout': '退出登录',
+        'products-title': '我们的帽子收藏',
+        'products-subtitle': '发现我们为整个家庭提供的各种手工帽子',
+        'all-products': '所有产品',
+        'men': '男士',
+        'women': '女士',
+        'girls': '女孩',
+        'size-guide': '尺码指南',
+        'men-sizes': '男士尺码',
+        'women-sizes': '女士尺码',
+        'girls-sizes': '女孩尺码',
+        'footer-description': '自1985年以来每顶帽子的工艺和传统',
+        'exchange-rates': '汇率',
+        'contact-info': '联系我们'
     }
 };
 

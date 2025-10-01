@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - La Palma de Oro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">
+                    <div class="logo-content">
+                        <img src="images/logo-real.png" alt="La Palma de Oro" class="logo-image">
+                        <div class="logo-text">
+                            <h1>La Palma de Oro</h1>
+                            <p class="tagline" data-translate="tagline">Elegancia y tradición en cada sombrero. Descubre nuestra colección artesanal.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link" data-translate="home">Inicio</a>
+                <a href="products.html" class="nav-link active" data-translate="products">Productos</a>
+                <a href="index.html#about" class="nav-link" data-translate="about">Sobre Nosotros</a>
+                <a href="index.html#contact" class="nav-link" data-translate="contact">Contacto</a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="language-selector">
+                    <button class="language-btn" id="languageBtn">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLang">ES</span>
+                    </button>
+                    <div class="language-dropdown" id="languageDropdown">
+                        <button class="lang-option" data-lang="es">🇪🇸 Español</button>
+                        <button class="lang-option" data-lang="en">🇺🇸 English</button>
+                        <button class="lang-option" data-lang="zh">🇨🇳 中文</button>
+                    </div>
+                </div>
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="auth-btn" id="authBtn" data-translate="login">Iniciar Sesión</button>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title" data-translate="products-title">Nuestra Colección de Sombreros</h1>
+                <p class="hero-subtitle" data-translate="products-subtitle">Descubre nuestra amplia gama de sombreros artesanales para toda la familia</p>
+            </div>
+        </section>
+
+        <!-- Product Categories -->
+        <section class="product-categories">
+            <div class="container">
+                <div class="categories-nav">
+                    <button class="category-btn active" data-category="all" data-translate="all-products">Todos los Productos</button>
+                    <button class="category-btn" data-category="caballero" data-translate="men">Caballeros</button>
+                    <button class="category-btn" data-category="dama" data-translate="women">Damas</button>
+                    <button class="category-btn" data-category="nina" data-translate="girls">Niñas</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Grid -->
+        <section class="products-section">
+            <div class="container">
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be loaded here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Size Guide -->
+        <section class="size-guide">
+            <div class="container">
+                <h2 class="section-title" data-translate="size-guide">Guía de Tallas</h2>
+                <div class="size-tables">
+                    <div class="size-table">
+                        <h3 data-translate="men-sizes">Tallas para Caballeros</h3>
+                        <div class="size-grid">
+                            <div class="size-item">54</div>
+                            <div class="size-item">56</div>
+                            <div class="size-item">58</div>
+                            <div class="size-item">60</div>
+                        </div>
+                    </div>
+                    <div class="size-table">
+                        <h3 data-translate="women-sizes">Tallas para Damas</h3>
+                        <div class="size-grid">
+                            <div class="size-item">55</div>
+                            <div class="size-item">57</div>
+                        </div>
+                    </div>
+                    <div class="size-table">
+                        <h3 data-translate="girls-sizes">Tallas para Niñas</h3>
+                        <div class="size-grid">
+                            <div class="size-item">XS</div>
+                            <div class="size-item">S</div>
+                            <div class="size-item">M</div>
+                            <div class="size-item">L</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>La Palma de Oro</h3>
+                    <p data-translate="footer-description">Artesanía y tradición en cada sombrero desde 1985</p>
+                </div>
+                <div class="footer-section">
+                    <h3 data-translate="exchange-rates">Tipos de Cambio</h3>
+                    <div class="exchange-rates">
+                        <div class="rate">
+                            <span>USD/MXN:</span>
+                            <span id="usdRate">$17.20</span>
+                        </div>
+                        <div class="rate">
+                            <span>CNY/MXN:</span>
+                            <span id="cnyRate">$2.40</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 data-translate="contact-info">Contacto</h3>
+                    <p>+52 756 122 3464</p>
+                    <p>palmadeoro.chilapa@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 La Palma de Oro. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+        <a href="https://wa.me/527561223464?text=Hola%20👋,%20¿en%20qué%20le%20podemos%20servir?%20–%20La%20Palma%20de%20Oro" class="floating-btn whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+527561223464" class="floating-btn phone-btn">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <span class="close" id="closeAuth">&times;</span>
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="loginTab" data-translate="login">Iniciar Sesión</button>
+                <button class="auth-tab" id="registerTab" data-translate="register">Registrarse</button>
+            </div>
+            <form class="auth-form" id="loginForm">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Contraseña" required>
+                <button type="submit" data-translate="login">Iniciar Sesión</button>
+            </form>
+            <form class="auth-form" id="registerForm" style="display: none;">
+                <input type="text" placeholder="Nombre completo" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Contraseña" required>
+                <button type="submit" data-translate="register">Registrarse</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <span class="close" id="closeCart">&times;</span>
+            <h2 data-translate="cart">Carrito de Compras</h2>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be loaded here -->
+            </div>
+            <div class="cart-total">
+                <h3 data-translate="total">Total: $<span id="cartTotal">0</span></h3>
+            </div>
+            <button class="checkout-btn" data-translate="checkout">Proceder al Pago</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="products.js"></script>
+</body>
+</html>
