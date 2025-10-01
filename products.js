@@ -2,6 +2,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize products page
     initializeProductsPage();
+    
+    // Initialize search functionality
+    initializeSearch();
 });
 
 function initializeProductsPage() {
@@ -13,6 +16,76 @@ function initializeProductsPage() {
     
     // Initialize size guide
     initializeSizeGuide();
+}
+
+function initializeSearch() {
+    const searchInput = document.getElementById('productSearch');
+    const searchBtn = document.getElementById('searchBtn');
+    
+    // Search on input
+    searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        filterProducts(searchTerm);
+    });
+    
+    // Search on button click
+    searchBtn.addEventListener('click', () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        filterProducts(searchTerm);
+    });
+    
+    // Search on Enter key
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            const searchTerm = e.target.value.toLowerCase();
+            filterProducts(searchTerm);
+        }
+    });
+}
+
+function filterProducts(searchTerm) {
+    const productCards = document.querySelectorAll('.product-card');
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const activeCategory = document.querySelector('.category-btn.active').getAttribute('data-category');
+    
+    productCards.forEach(card => {
+        const productName = card.querySelector('.product-name').textContent.toLowerCase();
+        const productDescription = card.querySelector('.product-description').textContent.toLowerCase();
+        const productGender = card.querySelector('.product-gender span').textContent.toLowerCase();
+        const cardCategory = card.getAttribute('data-category');
+        
+        const matchesSearch = searchTerm === '' || 
+            productName.includes(searchTerm) || 
+            productDescription.includes(searchTerm) ||
+            productGender.includes(searchTerm);
+        
+        const matchesCategory = activeCategory === 'all' || cardCategory === activeCategory;
+        
+        if (matchesSearch && matchesCategory) {
+            card.style.display = 'block';
+            card.style.animation = 'fadeInUp 0.5s ease-out';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+    
+    // Update results count
+    updateResultsCount();
+}
+
+function updateResultsCount() {
+    const visibleProducts = document.querySelectorAll('.product-card[style*="block"], .product-card:not([style*="none"])');
+    const resultsCount = document.getElementById('resultsCount') || createResultsCount();
+    resultsCount.textContent = `${visibleProducts.length} productos encontrados`;
+}
+
+function createResultsCount() {
+    const searchSection = document.querySelector('.search-section');
+    const resultsCount = document.createElement('div');
+    resultsCount.id = 'resultsCount';
+    resultsCount.className = 'results-count';
+    searchSection.appendChild(resultsCount);
+    return resultsCount;
 }
 
 function loadProducts() {
@@ -207,7 +280,6 @@ function createProductCard(product) {
 
 function initializeCategoryFilters() {
     const categoryBtns = document.querySelectorAll('.category-btn');
-    const productCards = document.querySelectorAll('.product-card');
     
     categoryBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -216,17 +288,12 @@ function initializeCategoryFilters() {
             // Add active class to clicked button
             btn.classList.add('active');
             
-            const category = btn.getAttribute('data-category');
+            // Get current search term
+            const searchInput = document.getElementById('productSearch');
+            const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
             
-            // Filter products
-            productCards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'block';
-                    card.style.animation = 'fadeInUp 0.5s ease-out';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+            // Filter products with both category and search
+            filterProducts(searchTerm);
         });
     });
 }
@@ -308,6 +375,61 @@ const productsCSS = `
     background: var(--bg-secondary);
     padding: 2rem 0;
     border-bottom: 1px solid var(--border-color);
+}
+
+.search-section {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.search-container {
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+}
+
+#productSearch {
+    width: 100%;
+    padding: 1rem 3rem 1rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 25px;
+    background: var(--card-bg);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+#productSearch:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.search-btn {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.search-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.results-count {
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
 .categories-nav {

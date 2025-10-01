@@ -59,7 +59,8 @@ const translations = {
         'girls-sizes': 'Tallas para Niñas',
         'footer-description': 'Artesanía y tradición en cada sombrero desde 1985',
         'exchange-rates': 'Tipos de Cambio',
-        'contact-info': 'Contacto'
+        'contact-info': 'Contacto',
+        'search-placeholder': 'Buscar sombreros...'
     },
     en: {
         'tagline': 'Elegance and tradition in every hat. Discover our artisanal collection.',
@@ -114,7 +115,8 @@ const translations = {
         'girls-sizes': 'Girls\' Sizes',
         'footer-description': 'Artisanry and tradition in every hat since 1985',
         'exchange-rates': 'Exchange Rates',
-        'contact-info': 'Contact'
+        'contact-info': 'Contact',
+        'search-placeholder': 'Search hats...'
     },
     zh: {
         'tagline': '每顶帽子的优雅与传统。发现我们的手工收藏。',
@@ -169,7 +171,8 @@ const translations = {
         'girls-sizes': '女孩尺码',
         'footer-description': '自1985年以来每顶帽子的工艺和传统',
         'exchange-rates': '汇率',
-        'contact-info': '联系我们'
+        'contact-info': '联系我们',
+        'search-placeholder': '搜索帽子...'
     }
 };
 

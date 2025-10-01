@@ -11,52 +11,60 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <a href="index.html" class="logo">
-                    <div class="logo-content">
-                        <img src="images/logo-real.png" alt="La Palma de Oro" class="logo-image">
-                        <div class="logo-text">
-                            <h1>La Palma de Oro</h1>
-                            <p class="tagline" data-translate="tagline">Elegancia y tradición en cada sombrero. Descubre nuestra colección artesanal.</p>
-                        </div>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-content">
+                    <img src="images/logo-real.png" alt="La Palma de Oro" class="logo-image">
+                    <div class="logo-text">
+                        <h1>La Palma de Oro</h1>
+                        <p class="tagline" data-translate="tagline">Elegancia y tradición en cada sombrero. Descubre nuestra colección artesanal.</p>
                     </div>
-                </a>
+                </div>
             </div>
-            <div class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link" data-translate="home">Inicio</a>
-                <a href="products.html" class="nav-link active" data-translate="products">Productos</a>
-                <a href="index.html#about" class="nav-link" data-translate="about">Sobre Nosotros</a>
-                <a href="index.html#contact" class="nav-link" data-translate="contact">Contacto</a>
-            </div>
-            <div class="nav-actions">
+            <div class="header-controls">
+                <div class="language-selector">
+                    <select id="languageSelect">
+                        <option value="es">🇪🇸 Español</option>
+                        <option value="en">🇺🇸 English</option>
+                        <option value="zh">🇨🇳 中文</option>
+                    </select>
+                </div>
                 <button class="theme-toggle" id="themeToggle">
                     <i class="fas fa-moon"></i>
                 </button>
-                <div class="language-selector">
-                    <button class="language-btn" id="languageBtn">
-                        <i class="fas fa-globe"></i>
-                        <span id="currentLang">ES</span>
-                    </button>
-                    <div class="language-dropdown" id="languageDropdown">
-                        <button class="lang-option" data-lang="es">🇪🇸 Español</button>
-                        <button class="lang-option" data-lang="en">🇺🇸 English</button>
-                        <button class="lang-option" data-lang="zh">🇨🇳 中文</button>
-                    </div>
-                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="images/logo-real.png" alt="La Palma de Oro" class="nav-logo">
+            </div>
+            
+            <!-- Mobile menu button -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" data-translate="nav-home">Inicio</a></li>
+                <li><a href="products.html" class="active" data-translate="nav-products">Productos</a></li>
+                <li><a href="index.html#about" data-translate="nav-about">Sobre Nosotros</a></li>
+                <li><a href="index.html#contact" data-translate="nav-contact">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
                 <button class="cart-btn" id="cartBtn">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count" id="cartCount">0</span>
                 </button>
                 <button class="auth-btn" id="authBtn" data-translate="login">Iniciar Sesión</button>
             </div>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <!-- Main Content -->
     <main class="main">
@@ -71,6 +79,16 @@
         <!-- Product Categories -->
         <section class="product-categories">
             <div class="container">
+                <!-- Search Bar -->
+                <div class="search-section">
+                    <div class="search-container">
+                        <input type="text" id="productSearch" placeholder="Buscar sombreros..." data-translate-placeholder="search-placeholder">
+                        <button class="search-btn" id="searchBtn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                
                 <div class="categories-nav">
                     <button class="category-btn active" data-category="all" data-translate="all-products">Todos los Productos</button>
                     <button class="category-btn" data-category="caballero" data-translate="men">Caballeros</button>
